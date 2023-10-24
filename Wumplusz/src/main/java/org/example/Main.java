@@ -1,19 +1,47 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        //Játékos nevének bekérése
+        System.out.println("Üdv a WUMPUS játékban. Kérlek add meg a neved!");
+        Scanner consoleInput = new Scanner(System.in);
+        String playerName = consoleInput.nextLine();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        //A játékos pályaszerkesztésbe, mentésbe, betöltésbe, játszásba, kilépésbe lép
+        while (true) {
+            System.out.println("\nVálasszon a következő lehetőségek közül:");
+            System.out.println("1. Pályaszerkesztés");
+            System.out.println("2. Mentés");
+            System.out.println("3. Betöltés");
+            System.out.println("4. Játék");
+            System.out.println("5. Kilépés");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            int answear = consoleInput.nextInt();
+
+            switch (answear) {
+                case 1:
+                    //Pálya méretének bekérése
+                    System.out.println("Mekkora legyen a pálya mérete?(NxN | 6-20)");
+                    
+                    break;
+                case 2:
+                    System.out.println("Mentés opció kiválasztva");
+                    break;
+                case 3:
+                    System.out.println("Betöltés opció kiválasztva");
+                    break;
+                case 4:
+                    System.out.println("Játék opció kiválasztva");
+                    break;
+                case 5:
+                    System.out.println("Kilépés opció kiválasztva. Viszlát " + playerName + "!");
+                    System.exit(0);
+                default:
+                    System.out.println("Hibás választás. Kérem, válasszon újra.");
+            }
+
         }
     }
 }
