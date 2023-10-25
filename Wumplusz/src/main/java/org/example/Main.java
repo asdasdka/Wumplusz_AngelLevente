@@ -24,7 +24,7 @@ public class Main {
                 case 1:
                     //Pálya méretének bekérése
                     System.out.println("Mekkora legyen a pálya mérete?(NxN | 6-20)");
-                    
+
                     break;
                 case 2:
                     System.out.println("Mentés opció kiválasztva");
@@ -40,6 +40,7 @@ public class Main {
                     System.exit(0);
                 default:
                     System.out.println("Hibás választás. Kérem, válasszon újra.");
+                    System.out.println("asdasd");
             }
 
         }
