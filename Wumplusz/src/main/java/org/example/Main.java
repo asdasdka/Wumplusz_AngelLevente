@@ -40,7 +40,6 @@ public class Main {
                     System.exit(0);
                 default:
                     System.out.println("Hibás választás. Kérem, válasszon újra.");
-                    System.out.println("asdasd");
             }
 
         }
