@@ -5,13 +5,15 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Main {
+    static Map map;
     public static void main(String[] args) {
         //Játékos nevének bekérése
         System.out.println("Üdv a WUMPUS játékban. Kérlek add meg a neved!");
         String playerName = request();
 
         //A játékos pályaszerkesztésbe, mentésbe, betöltésbe, játszásba, kilépésbe lép
-        while (true) {
+        boolean game = false;
+        while (!game) {
             System.out.println("\nVálasszon a következő lehetőségek közül:");
             System.out.println("1. Beolvasás");
             System.out.println("2. Mentés");
@@ -22,7 +24,7 @@ public class Main {
             int answear = Integer.parseInt(request());
 
             switch (answear) {
-                case 1://átírányítás a pályaszerkesztőbe
+                case 1:
                     Map map = new Map("src/main/resources/wumpuszinput.txt");
                     break;
                 case 2:
@@ -32,7 +34,9 @@ public class Main {
                     System.out.println("Betöltés opció kiválasztva");
                     break;
                 case 4:
-                    System.out.println("Játék opció kiválasztva");
+                    System.out.println("Jó játékot!");
+                    game = true;
+                    gameOn();
                     break;
                 case 5:
                     System.out.println("Kilépés opció kiválasztva. Viszlát " + playerName + "!");
@@ -43,7 +47,9 @@ public class Main {
         }
     }
 
-
+    private static void gameOn() {
+        map.drawMap(map.getMap());
+    }
 
 
     //A konzolról való beolvasást megkönnyító bekérő metódus
