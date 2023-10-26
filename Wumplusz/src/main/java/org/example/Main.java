@@ -5,7 +5,6 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Main {
-    static Map map;
     public static void main(String[] args) {
         //Játékos nevének bekérése
         System.out.println("Üdv a WUMPUS játékban. Kérlek add meg a neved!");
@@ -48,7 +47,8 @@ public class Main {
     }
 
     private static void gameOn() {
-        map.drawMap(map.getMap());
+        Game game = new Game("src/main/resources/wumpuszinput.txt");
+
     }
 
 

@@ -57,12 +57,4 @@ public class Map {
         this.playerDirection = playerDirection;
     }
 
-    public void drawMap(char map[][]){
-        for (int i = 0; i < map.length; i++){
-            for(int j = 0; j < mapSize; j++){
-                System.out.print(map[i][j]);
-            }
-            System.out.print("\n");
-        }
-    }
 }
