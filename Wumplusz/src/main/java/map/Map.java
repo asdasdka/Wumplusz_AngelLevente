@@ -1,26 +1,27 @@
-package org.example;
+package map;
+
+import game.Game;
+import menu.Menu;
+import player.Player;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map {
+public class Map extends Player {
     private char map[][];
-    private String startingPoint[];
-    private char playerDirection;
     private int mapSize;
 
-    //wumpuszinput beolvasása
-     public Map (String file) {
+    public Map(String playerName, boolean won, String file) {
+        super(playerName, won);
         try{
             RandomAccessFile read = new RandomAccessFile(file, "r");
             String firstRow[] = read.readLine().split(" ");
             this.mapSize = Integer.parseInt(firstRow[0]);
-            this.startingPoint = new String[2];
-            this.startingPoint[0] = firstRow[1];
-            this.startingPoint[1] = firstRow[2];
-            this.playerDirection = firstRow[3].charAt(0);
+            super.setPlayerDirection(firstRow[3].charAt(0));
+            super.setStartingPoint(firstRow[1],firstRow[2]);
+            super.setCurrentPoint(firstRow[1],firstRow[2]);
             this.map = new char[mapSize][mapSize];
             List<String> tempList = new ArrayList<>();
             for (int i = 0; read.getFilePointer() < read.length(); i++){
@@ -41,20 +42,8 @@ public class Map {
         return map;
     }
 
-    public String getStartingPoint() {
-        return startingPoint[0].concat(startingPoint[1]);
-    }
-
-    public char getPlayerDirection() {
-        return playerDirection;
-    }
-
     public int getMapSize() {
         return mapSize;
-    }
-
-    public void setPlayerDirection(char playerDirection) {
-        this.playerDirection = playerDirection;
     }
 
 }
