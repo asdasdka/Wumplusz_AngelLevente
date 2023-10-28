@@ -12,10 +12,10 @@ public class MapDraw extends Map{
     public void draw(char map[][]){
         for (int i = 0; i < map.length; i++){
             for(int j = 0; j < super.getMapSize(); j++){
-                if (String.valueOf(map[i][j]).equals(getCurrentPoint())) {
-                    System.out.print(map[i][j]);
-                }else{
+                if (i == getCurrentPoint()[0] && j == getCurrentPoint()[1]) {
                     System.out.print("H");
+                }else{
+                    System.out.print(map[i][j]);
                 }
             }
             System.out.print("\n");
