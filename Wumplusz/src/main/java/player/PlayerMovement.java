@@ -36,5 +36,5 @@ public class PlayerMovement extends MapDraw {
         }
     }
 
-
+    
 }

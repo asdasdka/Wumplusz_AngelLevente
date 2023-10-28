@@ -3,6 +3,9 @@ package player;
 import map.Map;
 import menu.Menu;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Player extends Menu {
     private String playerName;
     private Map map;
@@ -65,4 +68,31 @@ public class Player extends Menu {
         this.currentPosition[1] = value2;
     }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "playerName='" + playerName + '\'' +
+                ", map=" + map +
+                ", won=" + won +
+                ", startingPoint=" + Arrays.toString(startingPoint) +
+                ", currentPosition=" + Arrays.toString(currentPosition) +
+                ", playerDirection=" + playerDirection +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return won == player.won && playerDirection == player.playerDirection && Objects.equals(playerName, player.playerName) && Objects.equals(map, player.map) && Arrays.equals(startingPoint, player.startingPoint) && Arrays.equals(currentPosition, player.currentPosition);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(playerName, map, won, playerDirection);
+        result = 31 * result + Arrays.hashCode(startingPoint);
+        result = 31 * result + Arrays.hashCode(currentPosition);
+        return result;
+    }
 }

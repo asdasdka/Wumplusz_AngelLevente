@@ -20,4 +20,6 @@ public class MapDraw extends Map{
         }
         System.out.println();
     }
+
+
 }

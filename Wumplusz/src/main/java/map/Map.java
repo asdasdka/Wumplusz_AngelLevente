@@ -7,7 +7,9 @@ import player.Player;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Map extends Player {
     private char map[][];
@@ -45,5 +47,25 @@ public class Map extends Player {
     public int getMapSize() {
         return mapSize;
     }
-
+    @Override
+    public String toString() {
+        return "Map{" +
+                "map=" + Arrays.toString(map) +
+                ", mapSize=" + mapSize +
+                '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Map map1 = (Map) o;
+        return mapSize == map1.mapSize && Arrays.equals(map, map1.map);
+    }
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(super.hashCode(), mapSize);
+        result = 31 * result + Arrays.hashCode(map);
+        return result;
+    }
 }
