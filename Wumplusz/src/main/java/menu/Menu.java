@@ -22,7 +22,6 @@ public class Menu {
         System.out.println("Jó játékot " + player.getPlayerName() + "!");
         Game game = new Game(player.getPlayerName(), player.isWon(), "Wumplusz/src/main/resources/wumpuszinput.txt",true);
         MapDraw mapDraw = new MapDraw(player.getPlayerName(), player.isWon(), "Wumplusz/src/main/resources/wumpuszinput.txt");
-        mapDraw.draw(mapDraw.getMap());
     }
     public String request(){
         Scanner scanner = new Scanner(System.in);

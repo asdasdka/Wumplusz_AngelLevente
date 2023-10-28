@@ -1,7 +1,5 @@
 package map;
 
-import player.Player;
-
 public class MapDraw extends Map{
 
 
@@ -12,7 +10,7 @@ public class MapDraw extends Map{
     public void draw(char map[][]){
         for (int i = 0; i < map.length; i++){
             for(int j = 0; j < super.getMapSize(); j++){
-                if (i == getCurrentPoint()[0] && j == getCurrentPoint()[1]) {
+                if (i == getCurrentPosition()[0] && j == getCurrentPosition()[1]) {
                     System.out.print("H");
                 }else{
                     System.out.print(map[i][j]);
