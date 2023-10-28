@@ -44,12 +44,22 @@ public class Player extends Menu {
         this.playerDirection = playerDirection;
     }
 
-    public String[] getCurrentPoint() {
-        return currentPoint;
+    public int[] getCurrentPoint() {
+        int result[] = new int[2];
+        result[1] = Integer.parseInt(getStartingPoint()[1]);
+        int number = 1;
+        for (char i = 'A'; i <= 'T'; i++){
+            if (i == getCurrentPoint()[0]){
+
+            }
+        }
+
+        return result;
     }
 
     public void setCurrentPoint(String value1, String value2) {
         this.currentPoint[0] = value1;
         this.currentPoint[1] = value2;
     }
+
 }

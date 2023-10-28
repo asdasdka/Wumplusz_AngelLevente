@@ -16,7 +16,7 @@ public class Menu {
 
     }
 
-    public void gamee(Player player){
+    public void gameStart(Player player){
         Map map = new Map(player.getPlayerName(), player.isWon(), "Wumplusz/src/main/resources/wumpuszinput.txt");
         System.out.println("Pálya beolvasása kész!");
         System.out.println("Jó játékot " + player.getPlayerName() + "!");
@@ -37,7 +37,7 @@ public class Menu {
         int input = Integer.parseInt(request());
         switch (input){
             case 1:{
-                gamee(player);
+                gameStart(player);
                 break;
             }
             case 2:{

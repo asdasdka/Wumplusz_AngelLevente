@@ -21,7 +21,7 @@ public class Map extends Player {
             this.mapSize = Integer.parseInt(firstRow[0]);
             super.setPlayerDirection(firstRow[3].charAt(0));
             super.setStartingPoint(firstRow[1],firstRow[2]);
-            super.setCurrentPoint(firstRow[1],firstRow[2]);
+            super.setCurrentPoint(firstRow[1],firstRow[2] );
             this.map = new char[mapSize][mapSize];
             List<String> tempList = new ArrayList<>();
             for (int i = 0; read.getFilePointer() < read.length(); i++){
